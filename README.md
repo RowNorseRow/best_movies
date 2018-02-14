@@ -34,7 +34,7 @@
 
 ## Contribution
 
-If you would like to add to my website or help make improvements, feel free to fork my repository! I only ask that any improvements made also have a pull request so taht i can merge them into my repository if its a change I think is worth adding. Enjoy the website!
+If you would like to add to my website or help make improvements, feel free to fork my repository! I only ask that any improvements made also have a pull request so that i can merge them into my repository if its a change I think is worth adding. Enjoy the website!
   - For help with forking, see [this](https://help.github.com/articles/fork-a-repo/) page.
   
 ## License 
