@@ -1,0 +1,471 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>The Best Movies</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+               
+        body {
+            padding-top: 80px;
+            background-color: #0a0a0a;
+            color: #0af8c1;
+
+            
+        }
+        #trailer .modal-dialog {
+            margin-top: 20px;
+            width: 1060px;
+            height: 80000px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 75px;
+            margin-top: 75px;
+            ;
+           
+            
+            
+            
+        }
+        
+        .movie-tile:hover {
+            background-color: #0a0a0a;
+            cursor: pointer;
+            transform: scale(1.4, 1.4);
+ 
+        }
+
+               
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: black;
+
+              
+
+        
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+      <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <nav class="navbar navbar-light  navbar-fixed-top" style="background-color: #131514;" role="navigation">
+        <div class="container">
+          <nav class="navbar-header">
+            <a class="navbar-brand" href="#" style="color: #0af8c1;">My Favorite Movies-                                    Click on posters to play their trailer!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="lnRY0c-N2QE" data-toggle="modal" data-target="#trailer">
+    <h5>300</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/300poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="3ohiQ6cLRsE" data-toggle="modal" data-target="#trailer">
+    <h5>Batman Begins</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/af/Batman_Begins_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="pAcs51tG5sI" data-toggle="modal" data-target="#trailer">
+    <h5>The Big Short</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/The_Big_Short_teaser_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="uYGB6kmk1s8" data-toggle="modal" data-target="#trailer">
+    <h5>Blackhat</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/58/Blackhat_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="kAMUv22y1og" data-toggle="modal" data-target="#trailer">
+    <h5>The Book of Eli</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Book_of_eli_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ByehYal_cCs" data-toggle="modal" data-target="#trailer">
+    <h5>Cloud Atlas</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/20/Cloud_Atlas_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="GVx5K8WfFJY" data-toggle="modal" data-target="#trailer">
+    <h5>The Dark Knight</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OEuLVRgmuRI" data-toggle="modal" data-target="#trailer">
+    <h5>The Dark Knight Rises</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/83/Dark_knight_rises_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="TeR34YWdg6s" data-toggle="modal" data-target="#trailer">
+    <h5>Dawn of the Planet of the Apes</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/77/Dawn_of_the_Planet_of_the_Apes.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="wUQu6GAW01M" data-toggle="modal" data-target="#trailer">
+    <h5>The Departed</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Departed234.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="8wqVHjK2bQs" data-toggle="modal" data-target="#trailer">
+    <h5>Donnie Darko</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Donnie_Darko_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hKUGQhgSCCM" data-toggle="modal" data-target="#trailer">
+    <h5>Dracula Untold</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e8/Dracula_Untold_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="VCBz73EpKS0" data-toggle="modal" data-target="#trailer">
+    <h5>Draft Day</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/Draft_Day_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="XRtZUkAR2u4" data-toggle="modal" data-target="#trailer">
+    <h5>Dunkirk</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Dunkirk_Film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="m2m4tfBg9S4" data-toggle="modal" data-target="#trailer">
+    <h5>Flight</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/Flight_film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="9qv5XXeEWJ0" data-toggle="modal" data-target="#trailer">
+    <h5>Friday Night Lights</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/10/Friday_night_lights_ver2.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="SKu5lGfRBxc" data-toggle="modal" data-target="#trailer">
+    <h5>Fury</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/17/Fury_2014_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Q-b7B8tOAQU" data-toggle="modal" data-target="#trailer">
+    <h5>Gladiator</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8d/Gladiator_ver1.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qo5jJpHtI1Y" data-toggle="modal" data-target="#trailer">
+    <h5>Goodfellas</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Goodfellas.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="nH9LZOXBMUE" data-toggle="modal" data-target="#trailer">
+    <h5>Good Will Hunting</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Good_Will_Hunting_theatrical_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="d6sk3HudM4k" data-toggle="modal" data-target="#trailer">
+    <h5>Gravity</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Gravity_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="17YbwlUswRY" data-toggle="modal" data-target="#trailer">
+    <h5>The Great Gatsby</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/TheGreatGatsby2013Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5xpcwquIpRQ" data-toggle="modal" data-target="#trailer">
+    <h5>The Hobbit: An Unexpected Journey</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/The_Hobbit-_An_Unexpected_Journey.jpeg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="GeAsgM8NeA0" data-toggle="modal" data-target="#trailer">
+    <h5>The Hobbit: The Desolation of Smaug</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/The_Hobbit_-_The_Desolation_of_Smaug_theatrical_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="TpsFWBzDHkk" data-toggle="modal" data-target="#trailer">
+    <h5>The Hobbit: The Battle of the Five Armies</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Hobbit_-_The_Battle_of_the_Five_Armies.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ewpYq9rgg3w" data-toggle="modal" data-target="#trailer">
+    <h5>I Am Legend</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/df/I_am_legend_teaser.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="j2jRs4EAvWM" data-toggle="modal" data-target="#trailer">
+    <h5>The Imitation Game</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/The_Imitation_Game_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="1g4PLj0PlOM" data-toggle="modal" data-target="#trailer">
+    <h5>Inception</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="zSWdZVtXT7E" data-toggle="modal" data-target="#trailer">
+    <h5>Interstellar</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="R5aWvnS0e_M" data-toggle="modal" data-target="#trailer">
+    <h5>Kingsman: The Secret Service</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8b/Kingsman_The_Secret_Service_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LR8BpZVyoFo" data-toggle="modal" data-target="#trailer">
+    <h5>Kingsman: The Golden Circle</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/fb/Kingsman_The_Golden_Circle.png" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="M7SdUR1Pc-A" data-toggle="modal" data-target="#trailer">
+    <h5>Lady in the Water</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Ladyinthewater_pos_gal.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="RdS6FgmO4j8" data-toggle="modal" data-target="#trailer">
+    <h5>The Last Samurai</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/The_Last_Samurai.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="fRynVuORDMU" data-toggle="modal" data-target="#trailer">
+    <h5>Limitless</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/17/Limitless_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WAZs_hEQ83Y" data-toggle="modal" data-target="#trailer">
+    <h5>The Lord of the Rings: The Fellowship of the Ring</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/The_Lord_of_the_Rings_The_Fellowship_of_the_Ring_%282001%29_theatrical_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ve5HZfrrUqc" data-toggle="modal" data-target="#trailer">
+    <h5>The Lord of the Rings: The Two Towers</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/ad/Lord_of_the_Rings_-_The_Two_Towers.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="amGFXKHlE78" data-toggle="modal" data-target="#trailer">
+    <h5>The Lord of the Rings: The Return of the King</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Lord_of_the_Rings_-_The_Return_of_the_King.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="74sTGp6kVro" data-toggle="modal" data-target="#trailer">
+    <h5>Mama</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/11/Mama_2012_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="eRal_feCStc" data-toggle="modal" data-target="#trailer">
+    <h5>The Man in the Iron Mask</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/The_Man_in_the_Iron_Mask.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="rb-ZEBBKolc" data-toggle="modal" data-target="#trailer">
+    <h5>Man on Fire</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e8/Man_on_fireposter.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="GoGA1YIx2Ns" data-toggle="modal" data-target="#trailer">
+    <h5>The Martian</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/The_Martian_film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="m8e-FF8MsqU" data-toggle="modal" data-target="#trailer">
+    <h5>The Matrix</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="acmbihkmeVg" data-toggle="modal" data-target="#trailer">
+    <h5>The Matrix Reloaded</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Poster_-_The_Matrix_Reloaded.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="psNlHckYlVs" data-toggle="modal" data-target="#trailer">
+    <h5>The Matrix Revolutions</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Matrix_revolutions_ver7.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="3HnWeWcE5n8" data-toggle="modal" data-target="#trailer">
+    <h5>O Brother, Where Art Thou?</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/O_brother_where_art_thou_ver1.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="K-ZcqwvQbas" data-toggle="modal" data-target="#trailer">
+    <h5>Pacific Rim</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Pacific_Rim_FilmPoster.jpeg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5O7VSW4TFBU" data-toggle="modal" data-target="#trailer">
+    <h5>Passengers</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Passengers_2016_film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="_comGBmnYew" data-toggle="modal" data-target="#trailer">
+    <h5>The Patriot</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Patriot_promo_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="yzK0GBEkFxc" data-toggle="modal" data-target="#trailer">
+    <h5>Pearl Harbor</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Pearl_harbor_movie_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="o4gHCmTQDVI" data-toggle="modal" data-target="#trailer">
+    <h5>The Prestige</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Prestige_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="VYgcrny2hRs" data-toggle="modal" data-target="#trailer">
+    <h5>The Princess Bride</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Princess_bride.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="00uTFVnWJMw" data-toggle="modal" data-target="#trailer">
+    <h5>The Pursuit of Happyness</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/81/Poster-pursuithappyness.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QaGQe8okkY4" data-toggle="modal" data-target="#trailer">
+    <h5>Reign of Fire</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/Reign_of_Fire_movie.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="XuDImXbulVA" data-toggle="modal" data-target="#trailer">
+    <h5>The Revenant</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/The_Revenant_2015_film_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="EbCoDf44oCE" data-toggle="modal" data-target="#trailer">
+    <h5>Rise of the Planet of the Apes</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/81/Rise_of_the_Planet_of_the_Apes_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="tGEveEqpjYk" data-toggle="modal" data-target="#trailer">
+    <h5>Road to Perdition</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/90/Road_to_Perdition_Film_Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qmkcD3M2Qnc" data-toggle="modal" data-target="#trailer">
+    <h5>Secret Window</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Secret_Window_movie.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="SrReLxBqpjQ" data-toggle="modal" data-target="#trailer">
+    <h5>Seven Pounds</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Seven_Pounds_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="F5-Lv4CJmFM" data-toggle="modal" data-target="#trailer">
+    <h5>Signs</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/08/The_Signs_movie.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
+    <h5>The Shawshank Redemption</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WZsVNkx7NLw" data-toggle="modal" data-target="#trailer">
+    <h5>Spaceballs</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/45/Spaceballs.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QheoYw1BKJ4" data-toggle="modal" data-target="#trailer">
+    <h5>Transcendence</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/ef/Transcendence2014Poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="BEndyAOpI8A" data-toggle="modal" data-target="#trailer">
+    <h5>Tron: Legacy</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/Tron_Legacy_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="IHVzzxrPt1c" data-toggle="modal" data-target="#trailer">
+    <h5>V for Vendetta</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Vforvendettamov.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="4W3zQkGpzC0" data-toggle="modal" data-target="#trailer">
+    <h5>Walk Hard: The Dewey Cox Story</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/be/Walk_hard_poster_07.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-AFO0rUjXIA" data-toggle="modal" data-target="#trailer">
+    <h5>Walk the Line</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Walk_the_line_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="TeR34YWdg6s" data-toggle="modal" data-target="#trailer">
+    <h5>War for the Planet of the Apes</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/d7/War_for_the_Planet_of_the_Apes_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="H5-uFhEaIJw" data-toggle="modal" data-target="#trailer">
+    <h5>War of the Worlds</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/83/War_of_the_Worlds_2005_poster.jpg" width="300" height="400">
+</div>
+
+<div class="col-sm-6.5 col-md-5 col-lg-4 movie-tile text-center" data-trailer-youtube-id="k9yiOX1SfqA" data-toggle="modal" data-target="#trailer">
+    <h5>The Wolf of Wall Street</h5>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/WallStreet2013poster.jpg" width="300" height="400">
+</div>
+
+    </div>
+  </body>
+</html>
